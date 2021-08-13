@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <input type="text" class="txt" placeholder="輸入代辦事項">
+     <input type="button" class="btn" value="儲存待辦">  
+     <ul class="list">
+         <li>待辦事項1<input type="button" value="刪除" class="delete"></li>
+         <li>待辦事項2<input type="button" value="刪除" class="delete"></li>
+     </ul>
+     <script>
+          let data = [
+             {
+                 content:"待辦事項1"
+             },
+             {
+                 content:"刷牙"
+             }
+         ]
+         list = document.querySelector('.list')
+             let str = ""
+        function renderData(){
+           
+         data.forEach(function(item,index){
+             str+= `<li>${item.content}<input type="button" value="刪除" class="delete" data-num="${index}"></li>`
+             
+         })
+  
+         list.innerHTML = str
+        }
+        renderData()
+        saveBtn = document.querySelector('.btn')
+        txt = document.querySelector('.txt')
+      
+        saveBtn.addEventListener("click",function(e){
+            str=""
+            if(txt.value==""){
+                alert("請輸入內容")
+                return
+            }else{
+                
+                let obj={}
+            obj.content = txt.value
+            data.push(obj)
+            renderData()
+            txt.value=""
+            }
+        
+        })  
+        list.addEventListener("click",function(e){
+            let num = e.target.getAttribute('data-num')
+           let r = confirm("是否確定刪除")
+            if(r==true){
+                data.splice(num,1)
+            str = ""
+            renderData()
+            }
+           
+        })
+     </script>
+</body>
+</html>

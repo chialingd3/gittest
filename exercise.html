@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color:rgb(255, 0, 0);
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- <a href="#" class="myLink">連結一</a>
+    
+    <ul class="list">
+        <li>標題1</li>
+        <li>標題2<input type="button" value="點擊" class="btn"></li>
+    </ul> -->
+   
+       <h1>新增充電站:</h1> 
+        <input type="text" placeholder="充電站名稱" class="stationName">
+        <select name="" id="" class="stationCharge">
+            <option value="免費" selected>免費</option>
+            <option value="投幣式">投幣式</option>
+        </select>
+        <button class="btn">儲存</button>
+    <div class="filter">
+        <input type="button" value="免費">
+        <input type="button" value="投幣式">
+        <input type="button" value="全部">
+    </div>
+   
+    <ul class="list">
+        <li>xx充電站</li>
+    </ul>
+    <h1 class="username"></h1>
+    <h1>註冊</h1>
+    <input type="text" class="email">
+    <input type="text" class="psd">
+    <input type="button"  class="send" value="送出">
+
+    <h1>登入</h1>
+    <input type="text" class="email1">
+    <input type="text" class="psd1">
+    <input type="button"  class="send1" value="送出">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="all.js"></script>
+    <script>
+        let  email= document.querySelector(".email")         
+        let  psd= document.querySelector(".psd")  
+        let send = document.querySelector(".send")  
+        let  email1= document.querySelector(".email1")         
+        let  psd1= document.querySelector(".psd1")  
+        let send1 = document.querySelector(".send1")  
+        // 註冊
+        send.addEventListener("click", function(e){
+        
+            callSignUp()           
+        })
+        function callSignUp(){
+            let obj = {}
+             obj.email = email.value
+             obj.password = psd.value
+            axios.post('https://hexschool-tutorial.herokuapp.com/api/signup', obj)
+            .then(function (response) {
+                if(response.data.message== "帳號註冊成功"){
+                    alert( "帳號註冊成功")
+                }else{
+                    alert( "此帳號已有人使用")
+                }
+                email.value=''
+                psd.value=''
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+        // 登入
+        send1.addEventListener("click", function(e){
+        
+            callSignIn()           
+    })
+    function callSignIn(){
+        let obj1 = {}
+         obj1.email = email1.value
+         obj1.password = psd1.value
+        axios.post('https://hexschool-tutorial.herokuapp.com/api/signin', obj1)
+        .then(function (response) {
+            if(response.data.message== "登入成功"){
+                alert( "登入成功")
+            }else{
+                alert( "此帳號不存在或帳號密碼錯誤")
+            }
+            email.value=''
+            psd.value=''
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    </script>
+</body>
+</html>

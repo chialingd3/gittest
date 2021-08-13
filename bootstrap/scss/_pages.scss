@@ -1,0 +1,217 @@
+// font size
+$text-1:14px;
+$text-2:16px;
+$text-3:20px;
+$text-4:24px;
+$text-5:32px;
+$text-6:40px;
+.text-1{
+    font-size: $text-1;
+}
+.text-2{
+    font-size:$text-2;
+}
+.text-3{
+    font-size: $text-3;
+}
+.text-4{
+    font-size: $text-4;
+}
+.text-5{
+    font-size: $text-5;
+}
+.text-6{
+    font-size: $text-6;
+}
+//line-hight
+$line-hight-base: 1.5rem;
+$line-hight-sm: 1.25rem;
+$line-hight-lg: 1.75rem;
+$line-hight-xl: 2rem;
+.line-hight-base{
+    line-height:$line-hight-base;
+}
+.line-hight-sm{
+    line-height:$line-hight-sm;
+}
+.line-hight-lg{
+    line-height:$line-hight-lg;
+}
+.line-hight-xl{
+    line-height:$line-hight-xl;
+}
+
+// 標籤
+a{
+    text-decoration: none;
+}
+
+// layout
+// container
+.container-fluid{
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo{
+    max-width: 128px;
+    height: 38px;
+}
+
+// header
+// navbar
+// banner
+.banner{
+    background-image: url("img/index1.jpg");
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+
+.banner-block{
+    position: absolute;
+    max-width: 445px;
+    top: 255px;
+    left:58%;
+}
+.banner-block-btn{
+    width: 350px;
+    height: 60px;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    font-size: 24px;
+}
+
+.banner-block-btn:hover{
+    background-color:rgba(255,255,255,0.2);
+}
+
+
+// mobile
+
+   @media (max-width:576px) {
+    .container-fluid{
+    margin-left: auto;
+    margin-right: auto;
+}
+    .container{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+ // 漢堡選單 
+.header{
+        position: relative;
+}
+.dropdown{
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100vw;
+    max-height: 0;
+    transition: all 1s;
+    overflow: hidden;
+    z-index:9;
+}
+.dropdown.active{
+    max-height: 300px;
+
+}
+.dropdown li a{
+    display: block;
+    background-color: #8d8d8d;
+    border-top: 1px solid #FFFFFF;
+    padding: 15px 0px;
+    text-decoration: none;
+}
+
+/* navbar */
+.logo{
+    margin-right: auto;
+}
+.cart{
+    position: relative;
+}
+.cart-num{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -10px;
+    border-radius: 100%;
+    background-color: #916000;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* banner */
+.banner{
+    background-image: url("img/index1-s.jpg");
+    max-height: 680px;
+    background-position: center center;
+    background-size: cover;
+}
+.banner-block{
+position: absolute;
+max-width:90vw;
+left: 0;
+top: 110px; 
+}
+.banner-block h3{
+    font-size: 32px;
+}
+.banner-block p{
+    font-size: 20px;
+}
+.banner-block-btn{
+    max-width: 90vw;
+    height: 60px;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    font-size: 24px;
+}
+
+.section1-photo1{
+    background-image: url("img/index2.jpg");
+    max-width:345px;
+    height:350px;
+}
+.section1-photo2{
+    background-image: url("img/index3.png");
+    max-width:345px;
+    height:350px;
+    margin-top: 24px;
+}
+.section1-photo3{
+    background-image: url("img/index4.jpg");
+    max-width:345px;
+    height:350px;
+    margin-top: 24px;
+}
+.section1-photo4{
+    background-image: url("img/index5.jpg");
+    max-width:345px;
+    height:680px;
+    margin-top: 24px;
+}
+.banner-b{
+   background-position: -45px 0;
+}
+.banner-b-title{
+    position: absolute;
+    padding-top: 262px;
+    padding-left: 0;
+}
+.banner-b-email{
+    position: absolute;
+    padding-top: 412px;
+    padding-left: 0;
+
+}
+
+}
+
+
